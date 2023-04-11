@@ -1,0 +1,44 @@
+{% extends 'navigationbar.html'%}
+{% load static %}
+{% block body %}
+<style>
+ .contact-box {
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .contact-box:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
+</style>
+
+<div class="container" style="margin-top:50px">
+    <h1 class="text-center"> Contact US </h1>
+  <br><br>
+  <div class="row mt-5 text-center ">
+<div class="col-lg-3 col-sm-6 contact-box "> 
+  <h4><i class="fa-solid fa-mobile-retro "></i> Contact</h4>
+  <p class="mt-2 font-weight-bold"><a class="text-danger" href="tel:+91 7001561724"> +91 7001561724 </a></p>
+</div>   
+<br>
+<div class="col-lg-3 col-sm-6 contact-box"> 
+  <h4><i class="fa-regular fa-envelope-circle-check"></i> Email ID </h4>
+  <p class="mt-2 font-weight-bold"><a class="text-danger" href=" mailto:rohit123@gmail.com"> rohit123@gmail.com </a></p>
+</div> 
+
+    <div class="col-lg-3 col-sm-6 contact-box"> 
+  <h4><i class="fa-solid fa-address-book"></i> Address </h4>
+  <p class="mt-2 font-weight-bold"><a class="text-danger"target="_blank" href="https://www.google.com/maps/place/Kestopur,+Kolkata,+West+Bengal"> Rohit Kr singh </a><br>kestopur Kolkata<br>PIN CODE-7001561724</p>  
+</div> 
+
+ <div class="col-lg-3 col-sm-6 contact-box"> 
+  <h4><i class="fa-solid fa-clock"></i> OFFICE HOWER </h4>
+  <p class="mt-2 font-weight-bold text-danger "> 10:00AM : 07:30PM </p>
+</div> 
+    
+  </div>
+</div>
+
+{% endblock %}

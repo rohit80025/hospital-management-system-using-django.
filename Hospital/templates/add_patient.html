@@ -1,0 +1,48 @@
+{% extends 'navigationbar.html'%}
+{% load static %}
+{% block body %}
+
+<style>
+body {
+  background-color: #ffff99;
+}
+</style>
+
+{% if error == "no" %}
+     <script>
+	   alert('Requard Save Successfully');
+       window.location=('{% url "view_patient" %}');
+     </script>
+{% endif %}
+
+{% if error == "yes" %}
+     <script>
+	    alert('Something went wrong, Try Again');
+     </script>
+{% endif %}
+
+<div class="container" style="margin-top: 50px;">
+    <h2 class="text-center">Add Patient Details </h2>
+    <br><br>
+<form method="post" action="">
+    {% csrf_token %}
+    <label>PATIENT NAME</label>
+    <input type="text" class="form-control" name="name" required>
+<br>
+    <label> PATIENT GENDER </label>
+    <input type="radio" name="gender" value="male">Male
+  <input type="radio" name="gender" value="female">female
+  <br>
+  <label> Patient Contact </label>
+    <input type="text" class="form-control" name="mobile" required>
+  
+  <label> Address </label>
+    <input type="text" class="form-control" name="address" required>
+    <br>
+    <input type="submit" value="Submit" class="form-control btn btn-primary">
+
+</form>
+
+</div>
+
+{% endblock %}

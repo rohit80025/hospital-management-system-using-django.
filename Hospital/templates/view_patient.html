@@ -1,0 +1,40 @@
+{% extends 'navigationbar.html' %}
+{% load static %}
+{% block body %}
+
+<style>
+body {
+  background-color: #ffe6e6;
+}
+</style>
+
+<div class="container" style= "margin-top:50px">
+  <h2 class="text-center">View Patient </h2>
+  <br><br>
+  <table class="table table-hover" id="example">
+    <thead>
+      <tr>
+      <th>Patient ID </th>
+      <th>Patient Name </th>
+      <th>Patient gender </th>
+      <th>Patient Contact </th>
+      <th> address </th>
+      <th> Delete </th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in p_doc %}
+      <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.name}} </td>
+        <td>{{i.gender}}</td>
+        <td>{{i.mobile}}</td>
+        <td>{{i.address}}</td>
+        
+        <td><a href="{% url 'delete_patient' i.id  %}" onclick="return confirm('Are you really want to delete')"><i class="fa-solid fa-trash"></i></a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
